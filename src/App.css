@@ -1,0 +1,156 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-wrapper {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin: 0 auto;
+  width: 400px;
+  text-align: left;
+  border: 10px solid grey;
+  border-radius: 5px;
+  background: lightgrey;
+  transform: translate(-50%, -50%);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(70px, auto);
+}
+
+.input-container {
+  padding: 5px;
+  margin-left: 20px;
+}
+
+input {
+  width: 347px;
+  background-color: white;
+  border: 1px solid grey;
+  text-align: left;
+  color: black;
+  font-size: 25px;
+  font-weight: 600px;
+  border-radius: 5px;
+}
+
+.button-part {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 600px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  margin-left: 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #24a0ed;
+  color: white;
+}
+
+.attempts {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-left: 25px;
+  width: 350px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: #24a0ed;
+  font-weight: 600;
+}
+
+.attempts p {
+  margin: 8px;
+}
+
+.bg-danger p {
+  margin: 8px;
+}
+
+.bg-info p {
+  margin: 8px;
+}
+
+.bg-success p {
+  margin: 8px;
+}
+
+.bg-warning p {
+  margin: 8px;
+}
+
+.guesses {
+  margin-left: 25px;
+}
+
+.bg-success {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-left: 25px;
+  width: 350px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: green;
+  font-weight: 600;
+}
+
+.bg-info {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-left: 25px;
+  width: 350px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: lightskyblue;
+  font-weight: 600;
+}
+
+.bg-danger {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-left: 25px;
+  height: 36px;
+  width: 350px;
+  border-radius: 5px;
+  background-color: red;
+  font-weight: 600;
+}
+
+.bg-warning {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-left: 25px;
+  height: 36px;
+  width: 350px;
+  border-radius: 5px;
+  background-color: orange;
+  font-weight: 600;
+}
+
+.results {
+  height: 36px;
+  margin-bottom: 10px;
+}
+
+.newGame {
+  margin-bottom: 10px;
+}

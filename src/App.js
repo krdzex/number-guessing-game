@@ -15,6 +15,7 @@ const App = () => {
 
   const submitButton = () => {
     if (tryingNumber !== 0 && tryingNumber >= 1 && tryingNumber <= 100) {
+      setError("");
       if (tryingNumber === randomNumber) {
         setIsCorrect(true);
         return true;
@@ -25,6 +26,7 @@ const App = () => {
         return false;
       }
     }
+    setError("Number need to be between 1 and 100!");
   }
 
   function refreshGame() {
@@ -36,11 +38,14 @@ const App = () => {
     tryingNumber = 0;
   }
 
+  const [error, setError] = useState("");
+  console.log(randomNumber)
   return (
     <div className="app-wrapper">
       <div className="input-container">
         <p>Enter a number:</p>
         <input disabled={isCorrect || noOfAtt === 0} onChange={onChangeInput} id="input" type="number" min="1" max="100"></input>
+        <i style={{ color: "red", fontSize: 20, }}>{error}</i>
       </div>
       <div className="button-part">
         <button disabled={isCorrect || noOfAtt === 0} onClick={submitButton}>Submit number</button>
@@ -56,19 +61,19 @@ const App = () => {
         <p>Previous guesses: {historyOfTries.toString()}</p>
       </div>
       <div className="results">
-        <div className="bg-success" style={isCorrect === true ? { visibility: "visible" } : { visibility: "hidden " }}>
+        <div className="bg-success" style={error === "" && isCorrect === true ? { visibility: "visible" } : { visibility: "hidden " }}>
           <p>Congratulations! You got it right!</p>
         </div>
-        <div className="bg-info" style={isCorrect === false && randomNumber > tryingNumber && noOfAtt !== 0 ? { visibility: "visible" } : { visibility: "hidden " }}>
+        <div className="bg-info" style={error === "" && isCorrect === false && randomNumber > tryingNumber && noOfAtt !== 0 ? { visibility: "visible" } : { visibility: "hidden " }}>
           <p>UPS! Last guess was too low!</p>
         </div>
-        <div className="bg-danger" style={isCorrect === false && randomNumber < tryingNumber && noOfAtt !== 0 ? { visibility: "visible" } : { visibility: "hidden " }}>
+        <div className="bg-danger" style={error === "" && isCorrect === false && randomNumber < tryingNumber && noOfAtt !== 0 ? { visibility: "visible" } : { visibility: "hidden " }}>
           <p>UPS! Last quess was too high!</p>
         </div>
-        <div className="bg-warning" style={isCorrect === false && noOfAtt === 0 ? { visibility: "visible" } : { visibility: "hidden " }}>
+        <div className="bg-warning" style={error === "" && isCorrect === false && noOfAtt === 0 ? { visibility: "visible" } : { visibility: "hidden " }}>
           <p>GAME OVER!</p>
         </div>
-      </div >
+      </div>
       <div className="newGame" style={isCorrect === true || noOfAtt === 0 ? { visibility: "visible" } : { visibility: "hidden " }}>
         <button onClick={refreshGame}>Start new game</button>
       </div>

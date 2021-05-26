@@ -154,3 +154,9 @@ button {
 .newGame {
   margin-bottom: 10px;
 }
+
+input::placeholder {
+  color: red;
+  font-style: italic;
+  font-size: 19px;
+}

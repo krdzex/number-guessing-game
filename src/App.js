@@ -44,7 +44,7 @@ const App = () => {
     <div className="app-wrapper">
       <div className="input-container">
         <p>Enter a number:</p>
-        <input placeholder="Guessing range is between 1 and 100!" disabled={isCorrect || noOfAtt === 0} onChange={onChangeInput} id="input" type="number"></input>
+        <input placeholder="Guessing range is between 1 and 100!" disabled={isCorrect || noOfAtt === 0} onChange={onChangeInput} min="1" max="100" id="input" type="number"></input>
         <i style={{ color: "red", fontSize: 20, }}>{error}</i>
       </div>
       <div className="button-part">
